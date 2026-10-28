@@ -7,15 +7,22 @@ or MP3 audio. It also works with most other video sites.
 
 GETTING STARTED
 ---------------
+With the installer (VideoDownloader-<version>-setup.exe):
+1. Double-click the setup file and click through the steps. It installs just
+   for you, so it doesn't ask for an administrator password.
+2. Open "Video Downloader" from the Start menu.
+To remove it: Settings > Apps > Video Downloader > Uninstall.
+
+With the zip (VideoDownloader-<version>-win64.zip):
 1. Unzip the folder anywhere you like (for example Documents or Desktop).
    Keep everything inside the "Video Downloader" folder together.
 2. Double-click "Video Downloader.exe".
-
-   The first time, Windows may show "Windows protected your PC". This appears
-   for apps that aren't code-signed. Click "More info", then "Run anyway".
-
 Nothing is installed. To remove the app, delete the folder (and optionally
 the settings folder listed below).
+
+Either way, the first time Windows may show "Windows protected your PC".
+This appears for apps that aren't code-signed. Click "More info", then
+"Run anyway".
 
 
 HOW TO USE
@@ -65,6 +72,7 @@ WHERE THINGS ARE KEPT
 ---------------------
 Settings and the download engine:  %LOCALAPPDATA%\Video Downloader
 (paste that into the File Explorer address bar to open it)
+Uninstalling removes this folder too. Your downloaded videos are never removed.
 
 
 PLEASE NOTE

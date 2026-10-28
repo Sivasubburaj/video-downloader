@@ -9,9 +9,15 @@ MP4 video or MP3 audio. It also works with most other sites that
 
 ## Download
 
-Get `VideoDownloader-<version>-win64.zip` from the
-[latest release](https://github.com/Sivasubburaj/video-downloader/releases/latest), unzip
-it and run `Video Downloader.exe`. Nothing is installed. Requires Windows 10 or 11 (64-bit).
+From the [latest release](https://github.com/Sivasubburaj/video-downloader/releases/latest),
+get either:
+
+- `VideoDownloader-<version>-setup.exe`: an installer. It installs just for you (no
+  administrator password) and adds a Start menu shortcut and an uninstaller.
+- `VideoDownloader-<version>-win64.zip`: unzip it and run `Video Downloader.exe`. Nothing
+  is installed.
+
+Requires Windows 10 or 11 (64-bit).
 
 The app isn't code-signed, so Windows SmartScreen may say "Windows protected your PC" the
 first time. Click *More info* → *Run anyway*.
@@ -32,7 +38,8 @@ The user guide that ships in the zip is [app/README.txt](app/README.txt).
 
 ## Build from source
 
-You need Windows, Python 3.14 and [uv](https://docs.astral.sh/uv/). From the repo folder:
+You need Windows, Python 3.14, [uv](https://docs.astral.sh/uv/) and, for the installer,
+[Inno Setup 6.7](https://jrsoftware.org/isdl.php) or later. From the repo folder:
 
 ```bash
 uv run --no-project --python 3.14 --with pyinstaller --with pillow --with imageio-ffmpeg --with sv-ttk app/build.py
@@ -43,7 +50,10 @@ The build:
 1. downloads the latest `yt-dlp.exe` and checks it against the release's SHA-256 sums,
 2. bundles FFmpeg from [imageio-ffmpeg](https://github.com/imageio/imageio-ffmpeg),
 3. draws the icon and builds `dist/Video Downloader/` with PyInstaller,
-4. writes `release/VideoDownloader-<version>-win64.zip` and `SHA256SUMS.txt`.
+4. writes `release/VideoDownloader-<version>-win64.zip`,
+5. compiles the installer from [app/installer.iss](app/installer.iss) into
+   `release/VideoDownloader-<version>-setup.exe` (skipped if Inno Setup isn't installed),
+6. writes `SHA256SUMS.txt` for both.
 
 The version number is `APP_VERSION` in [app/downloader.py](app/downloader.py).
 
@@ -59,7 +69,8 @@ uv run --no-project --python 3.14 --with pillow --with sv-ttk app/downloader.py
 | Path | What it is |
 | --- | --- |
 | [app/downloader.py](app/downloader.py) | The app (tkinter with the Sun Valley theme) |
-| [app/build.py](app/build.py) | Builds the release zip |
+| [app/build.py](app/build.py) | Builds the release zip and installer |
+| [app/installer.iss](app/installer.iss) | Inno Setup script for the installer |
 | [app/README.txt](app/README.txt) | User guide, shipped in the zip |
 | [app/THIRD-PARTY-NOTICES.txt](app/THIRD-PARTY-NOTICES.txt) | License notices, filled in with tool versions by the build |
 | [app/RELEASE-NOTES.md](app/RELEASE-NOTES.md) | Notes for the current release |

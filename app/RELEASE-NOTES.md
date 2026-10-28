@@ -8,8 +8,13 @@ Facebook videos as MP4 video or MP3 audio. It also works with most other video s
 
 ## Download
 
-`VideoDownloader-1.0.0-win64.zip`. Unzip it and run `Video Downloader.exe`. Nothing is
-installed. The SHA-256 checksum is in `SHA256SUMS.txt`.
+- **`VideoDownloader-1.0.0-setup.exe`** (easiest): run it and click through. It installs
+  just for you, with no administrator password, and adds a Start menu shortcut and an
+  uninstaller.
+- **`VideoDownloader-1.0.0-win64.zip`**: unzip it and run `Video Downloader.exe`. Nothing is
+  installed.
+
+The SHA-256 checksums are in `SHA256SUMS.txt`.
 
 Requires Windows 10 or 11 (64-bit).
 
@@ -37,6 +42,9 @@ Tested on Windows 10 22H2 with the packaged build:
 - Cancelling mid-download leaves no partial files
 - A bad link shows a plain-English error
 - First run from an empty settings folder; the app closes cleanly with no leftover processes
+- Installer: clicked through the wizard, launched the app from the last page, downloaded
+  from the installed copy, then uninstalled. That removed the app, its shortcuts, its
+  Apps & features entry and its settings, and kept the downloaded videos.
 
 ## Known limitations
 
