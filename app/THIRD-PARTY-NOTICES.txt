@@ -1,0 +1,39 @@
+THIRD-PARTY SOFTWARE IN VIDEO DOWNLOADER
+=======================================
+
+Video Downloader includes the following software. Each is the property of its
+authors and is used under its own licence.
+
+yt-dlp  (version {ytdlp})
+  The download engine. Public domain under The Unlicense.
+  https://github.com/yt-dlp/yt-dlp
+  It is kept in %LOCALAPPDATA%\Video Downloader and updates itself from the
+  official yt-dlp GitHub releases.
+
+FFmpeg  ({ffmpeg})
+  Used to merge video and audio and to convert to MP3. This build includes
+  GPL-licensed components and is distributed under the GNU General Public
+  License version 3.
+  Licence text: https://www.gnu.org/licenses/gpl-3.0.txt
+  Source code:  https://ffmpeg.org/download.html
+  The binary is the gyan.dev "essentials" build (configured with --enable-gpl
+  --enable-version3), as packaged by the imageio-ffmpeg project:
+  https://www.gyan.dev/ffmpeg/builds/  ·  https://github.com/imageio/imageio-ffmpeg
+  It is the unmodified program _internal\bin\ffmpeg.exe and can be replaced
+  with any other FFmpeg build.
+
+Python  (3.14)
+  Python Software Foundation License.  https://docs.python.org/3/license.html
+
+Tcl/Tk  (8.6)
+  BSD-style licence.  https://www.tcl.tk/software/tcltk/license.html
+
+Pillow
+  MIT-CMU licence.  https://github.com/python-pillow/Pillow/blob/main/LICENSE
+
+Sun Valley ttk theme (sv-ttk)
+  MIT licence, by rdbende.  https://github.com/rdbende/Sun-Valley-ttk-theme
+
+PyInstaller bootloader
+  GPL 2.0 with the bootloader exception, which allows use in programs under
+  any licence.  https://github.com/pyinstaller/pyinstaller/blob/develop/COPYING.txt

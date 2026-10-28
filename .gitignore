@@ -1,0 +1,10 @@
+# Made by app/build.py
+build/
+dist/
+release/
+app/bin/
+app/icon.ico
+*.spec
+
+__pycache__/
+.venv/
