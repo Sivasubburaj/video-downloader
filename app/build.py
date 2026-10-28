@@ -130,7 +130,8 @@ def main():
     archive = Path(shutil.make_archive(str(release / f"VideoDownloader-{VERSION}-win64"), "zip",
                                        root_dir=dist, base_dir=NAME))
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
-    (release / "SHA256SUMS.txt").write_text(f"{digest}  {archive.name}\n", encoding="utf-8")
+    # LF endings: `sha256sum -c` rejects the CRLF that text mode writes on Windows
+    (release / "SHA256SUMS.txt").write_text(f"{digest}  {archive.name}\n", encoding="utf-8", newline="\n")
     shutil.copy2(HERE / "RELEASE-NOTES.md", release / "RELEASE-NOTES.md")
     shots = sorted((ROOT / "screenshots").glob("ui-*.png"))
     if shots:
