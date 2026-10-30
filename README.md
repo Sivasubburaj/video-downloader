@@ -1,8 +1,10 @@
 # Video Downloader
 
-A small Windows app that saves YouTube Shorts, Instagram Reels and Facebook videos as
-MP4 video or MP3 audio. It also works with most other sites that
+A small Windows and Android app that saves YouTube Shorts, Instagram Reels and Facebook
+videos as MP4 video or MP3 audio. It also works with most other sites that
 [yt-dlp](https://github.com/yt-dlp/yt-dlp) supports.
+
+The Android version, with the same features, is in [android/](android/README.md).
 
 ![Light theme](screenshots/ui-light.png)
 ![Dark theme](screenshots/ui-dark.png)
@@ -19,7 +21,10 @@ get either:
 
 Requires Windows 10 or 11 (64-bit).
 
-The app isn't code-signed, so Windows SmartScreen may say "Windows protected your PC" the
+For Android 8.0 or later, get `VideoDownloader-<version>-android-arm64-v8a.apk` (almost all
+phones), or `-armeabi-v7a.apk` for older 32-bit phones. See [android/README.md](android/README.md).
+
+The Windows app isn't code-signed, so Windows SmartScreen may say "Windows protected your PC" the
 first time. Click *More info* → *Run anyway*.
 
 The user guide that ships in the zip is [app/README.txt](app/README.txt).
@@ -74,13 +79,16 @@ uv run --no-project --python 3.14 --with pillow --with sv-ttk app/downloader.py
 | [app/README.txt](app/README.txt) | User guide, shipped in the zip |
 | [app/THIRD-PARTY-NOTICES.txt](app/THIRD-PARTY-NOTICES.txt) | License notices, filled in with tool versions by the build |
 | [app/RELEASE-NOTES.md](app/RELEASE-NOTES.md) | Notes for the current release |
+| [android/](android/README.md) | The Android app (Kotlin, Jetpack Compose, youtubedl-android) |
 | [screenshots/](screenshots) | Screenshots used here and in the release notes |
 
 ## License
 
 The app's source code is under the [MIT License](LICENSE). The release zip also contains
 yt-dlp (Unlicense), FFmpeg (GPLv3) and other components under their own licenses; see
-[app/THIRD-PARTY-NOTICES.txt](app/THIRD-PARTY-NOTICES.txt).
+[app/THIRD-PARTY-NOTICES.txt](app/THIRD-PARTY-NOTICES.txt). The Android APKs include the
+GPLv3 youtubedl-android library, so they are distributed under the GPLv3 (details in
+[android/README.md](android/README.md#licenses)).
 
 Only download videos you own, have permission to use, or that are licensed for reuse.
 YouTube, Instagram and Facebook are trademarks of their owners. This project is not

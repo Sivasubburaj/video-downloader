@@ -18,6 +18,15 @@ The SHA-256 checksums are in `SHA256SUMS.txt`.
 
 Requires Windows 10 or 11 (64-bit).
 
+### Android
+
+- **`VideoDownloader-1.0.0-android-arm64-v8a.apk`**: almost all phones from about 2017 on.
+- **`VideoDownloader-1.0.0-android-armeabi-v7a.apk`**: older 32-bit phones.
+
+Requires Android 8.0 or later. Open the APK on the phone and allow installing apps from that
+source when Android asks. Then share a video from YouTube, Instagram, Facebook or X to
+**Video Downloader**, or paste its link. Files go to `Download/Video Downloader`.
+
 ## Features
 
 - Paste a link to see the title, thumbnail, channel and length before downloading
@@ -46,6 +55,16 @@ Tested on Windows 10 22H2 with the packaged build:
   from the installed copy, then uninstalled. That removed the app, its shortcuts, its
   Apps & features entry and its settings, and kept the downloaded videos.
 
+Android, tested on the Android 14 emulator, including the signed release build:
+
+- Links shared from the share menu, pasted, or typed
+- YouTube Short → MP4 (H.264 + AAC) and → MP3, Instagram Reel → MP4 at 720p, Facebook
+  video → MP4 with a long, punctuation-heavy title
+- A 10-minute video at 360p, downloaded while the app was in the background, with a
+  "saved" notification
+- Cancelling leaves no partial or temporary files; clear messages for bad links
+- Light and dark themes; yt-dlp updates itself on first launch
+
 ## Known limitations
 
 - **Unsigned app.** Windows SmartScreen may say "Windows protected your PC" on first
@@ -57,6 +76,12 @@ Tested on Windows 10 22H2 with the packaged build:
 - **YouTube** formats are most complete when Node.js or Deno is installed. The app uses
   either one automatically if it's present.
 - Private videos, and videos you can't see in your browser, can't be downloaded.
+- **Android** isn't on Google Play, which doesn't allow YouTube downloaders. On a phone,
+  previews take about 10 seconds and YouTube downloads about 20 seconds extra, because the
+  app solves YouTube's JavaScript challenge with a small built-in engine (QuickJS).
+- **Android sign-in** works inside the app for Instagram, Facebook and X. It was checked up
+  to the sign-in page, not with a real account. YouTube sign-in isn't offered because Google
+  blocks it inside apps.
 
 Only download videos you own, have permission to use, or that are licensed for reuse.
 
@@ -65,3 +90,7 @@ Only download videos you own, have permission to use, or that are licensed for r
 yt-dlp 2026.10.26 (Unlicense), FFmpeg 7.1 (GPLv3, gyan.dev build), Python 3.14,
 Tcl/Tk 8.6, Pillow and the Sun Valley ttk theme. Full details are in
 `THIRD-PARTY-NOTICES.txt` inside the zip.
+
+The Android app is built on youtubedl-android 0.18.1 (GPLv3), which bundles Python 3.12,
+FFmpeg 7.1.1 and QuickJS. The APKs are therefore distributed under the GPLv3; their source is
+this repository plus [youtubedl-android](https://github.com/yausername/youtubedl-android).
